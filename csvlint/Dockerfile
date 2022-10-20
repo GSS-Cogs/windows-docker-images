@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows:ltsc2019
+FROM mcr.microsoft.com/windows/server:ltsc2022
 
 ARG CSVLINT_VERSION=v0.6.5
 
