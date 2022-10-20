@@ -38,7 +38,7 @@ jobs:
       #     expected: ${{ steps.vars.outputs.latest_commit }}  
       #     actual: ${{ steps.vars.outputs.release_tagged_commit }}
 
-      uses: mr-smithers-excellent/docker-build-push@v5
+      - uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: gsscogs/csvlint
         registry: docker.io
