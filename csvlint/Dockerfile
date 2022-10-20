@@ -2,11 +2,13 @@ FROM mcr.microsoft.com/windows/nanoserver:ltsc2022
 
 ARG CSVLINT_VERSION=v0.6.5
 
-# Install chocolatey package manager
-RUN ["powershell", "Set-ExecutionPolicy", "Bypass", "-Scope", "Process", "-Force;", "[System.Net.ServicePointManager]::SecurityProtocol", "=", "[System.Net.ServicePointManager]::SecurityProtocol", "-bor", "3072;", "iex", "((New-Object", "System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"]
+RUN ["winget", "install", "RubyInstallerTeam.Ruby"]
 
-# Install ruby
-RUN choco install ruby
+## Install chocolatey package manager
+# RUN ["powershell", "Set-ExecutionPolicy", "Bypass", "-Scope", "Process", "-Force;", "[System.Net.ServicePointManager]::SecurityProtocol", "=", "[System.Net.ServicePointManager]::SecurityProtocol", "-bor", "3072;", "iex", "((New-Object", "System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"]
+
+# # Install ruby
+# RUN choco install ruby
 
 # Acquire csvlint and install it
 ADD https://github.com/GSS-Cogs/csvlint.rb/archive/refs/tags/{CSVLINT_VERSION}.zip .
