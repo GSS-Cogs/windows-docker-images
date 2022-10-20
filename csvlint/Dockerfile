@@ -9,7 +9,7 @@ RUN powershell Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.Ser
 RUN choco install ruby
 
 # Acquire csvlint and install it
-ADD https://github.com/GSS-Cogs/csvlint.rb/archive/refs/tags/{CSVLINT_VERSION}.zip
+ADD https://github.com/GSS-Cogs/csvlint.rb/archive/refs/tags/{CSVLINT_VERSION}.zip .
 
 RUN mkdir csvlint
 
