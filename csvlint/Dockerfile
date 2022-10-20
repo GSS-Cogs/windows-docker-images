@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows/nanoserver:ltsc2022
+FROM mcr.microsoft.com/windows:ltsc2019
 
 ARG CSVLINT_VERSION=v0.6.5
 
