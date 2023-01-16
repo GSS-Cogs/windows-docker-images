@@ -38,11 +38,15 @@ jobs:
       #     expected: ${{ steps.vars.outputs.latest_commit }}  
       #     actual: ${{ steps.vars.outputs.release_tagged_commit }}
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v1 
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build Windows Container
+        run: docker build --file=csvlint/Dockerfile -t csvlint-windows:test .
+
+
+      # - name: Login to DockerHub
+      #   uses: docker/login-action@v1 
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build main
         uses: docker/build-push-action@v2
