@@ -28,6 +28,6 @@ jobs:
 
       - name: Build + Deploy Windows Container
         run: |
-          docker build --file=csvlint/Dockerfile
+          docker build --file=csvlint/Dockerfile -t csvcubed-windows-build:latest.
           docker image push csvcubed-windows-build
 
