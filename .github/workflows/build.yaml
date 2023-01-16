@@ -23,7 +23,7 @@ jobs:
       - name: Build + Deploy Windows Container
         run: |
           docker build --file=csvlint/Dockerfile -t csvlint-windows:test .
-          docker push windows-docker-images
+          docker image push windows-docker-images
 
 
       - name: Login to DockerHub
