@@ -13,3 +13,7 @@ RUN pyenv install 3.9.15
 RUN pyenv global 3.11.1
 # Check version of python in use.
 RUN python --version
+
+# Install ruby
+ADD https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.3-1/rubyinstaller-2.4.3-1-x64.exe ruby-installer.exe
+RUN ./rubyinstaller.exe /silent
