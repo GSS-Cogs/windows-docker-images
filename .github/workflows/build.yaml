@@ -23,5 +23,5 @@ jobs:
       - name: Build + Deploy Windows Container
         run: |
           docker build --file=Dockerfile -t gsscogs/csvcubed-windows-build:latest .
-          docker push gsscogs/csvcubed-windows-build:latest
+          #docker push gsscogs/csvcubed-windows-build:latest
 
