@@ -27,7 +27,7 @@ $gemDir = gem environment gemdir
 bundle config set bin bin
 bundle config set path "$gemDir"
 bundle install
-bundle show csvlint
+bundle show
 
 $csvLintInstallationFolder = (Get-Item bin | Resolve-Path).Path.Substring(38)
 
