@@ -27,7 +27,7 @@ bundle show
 Write-Output "bundle init"
 bundle init --verbose
 Write-Output "bundle add i18n"
-bundle add i18n --version "~>1.12.0" --skip-install --verbose
+bundle add i18n --version "1.12.0" --skip-install --verbose
 Write-Output "csvlint"
 bundle add csvlint --git https://github.com/GSS-Cogs/csvlint.rb --ref v0.6.7 --skip-install --verbose
 
