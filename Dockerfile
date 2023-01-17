@@ -25,9 +25,9 @@ RUN pip install poetry
 ADD https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.3-1/rubyinstaller-2.4.3-1-x64.exe ruby-installer.exe
 RUN ruby-installer.exe /silent
 RUN ruby --version
-RUN gem install bundle
+RUN gem install bundler
 
-RUN where ruby
+# RUN where ruby
 
 # Install node/npm
 ADD https://nodejs.org/dist/v18.13.0/node-v18.13.0-x86.msi node.msi
