@@ -26,7 +26,8 @@ ADD https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2
 RUN ruby-installer.exe /silent
 RUN ruby --version
 RUN gem install bundler -v '2.3'
-RUN powershell -Command "tree"
+RUN powershell -Command "ls"
+RUN rm Gemfile
 RUN where ruby
 
 # # Install node/npm
