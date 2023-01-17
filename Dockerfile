@@ -5,7 +5,7 @@ RUN powershell -Command "Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.gi
 
 RUN pyenv install 3.11.1
 
-RUN pyenv 3.11.1
+RUN pyenv local 3.11.1
 
 RUN python --version
 
