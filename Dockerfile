@@ -25,7 +25,7 @@ RUN pip install poetry
 ADD https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.3-1/rubyinstaller-2.4.3-1-x64.exe ruby-installer.exe
 RUN ruby-installer.exe /silent
 RUN ruby --version
-RUN gem install bundler
+RUN gem install bundler -v '2.3'
 
 # RUN where ruby
 
