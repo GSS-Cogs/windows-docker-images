@@ -7,7 +7,8 @@ RUN powershell -Command "Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.gi
 # Install python versions
 RUN pyenv install 3.11.1
 RUN pyenv install 3.10.9
-RUN pyenv install 3.9.15
+RUN pyenv install --list 
+# todo install a 3.9.x version!
 
 # Set global version of python.
 RUN pyenv global 3.11.1
