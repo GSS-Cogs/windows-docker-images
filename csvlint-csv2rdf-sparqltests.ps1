@@ -20,9 +20,10 @@ cp curl-7.86.0-win64-mingw\bin\* C:\Ruby24-x64\bin\
 
 C:\Ruby24-x64\bin\gem.exe install bundler -v '2.3'
 
+bundle show
 bundle init
-bundle add i18n --version "~>1.12.0"
-bundle add csvlint --git https://github.com/GSS-Cogs/csvlint.rb --ref v0.6.7
+bundle add i18n --version "~>1.12.0" --skip-install
+bundle add csvlint --git https://github.com/GSS-Cogs/csvlint.rb --ref v0.6.7 --skip-install
 
 $gemDir = gem environment gemdir
 
