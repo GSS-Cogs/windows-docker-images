@@ -29,6 +29,8 @@ bundle config set path "$gemDir"
 bundle install
 
 # debug
+Get-Content -Path Gemfile
+
 tree
 
 $csvLintInstallationFolder = (Get-Item bin | Resolve-Path).Path.Substring(38)
