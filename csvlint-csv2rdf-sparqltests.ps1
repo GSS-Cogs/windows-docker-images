@@ -20,16 +20,25 @@ cp curl-7.86.0-win64-mingw\bin\* C:\Ruby24-x64\bin\
 
 gem install bundler -v '2.3'
 
+Write-Output "bundle --help"
+bundle --help
+Write-Output "bundle show"
 bundle show
-bundle init
-bundle add i18n --version "~>1.12.0" --skip-install
-bundle add csvlint --git https://github.com/GSS-Cogs/csvlint.rb --ref v0.6.7 --skip-install
+Write-Output "bundle init"
+bundle init --verbose
+Write-Output "bundle add i18n"
+bundle add i18n --version "~>1.12.0" --skip-install --verbose
+Write-Output "csvlint"
+bundle add csvlint --git https://github.com/GSS-Cogs/csvlint.rb --ref v0.6.7 --skip-install --verbose
 
 $gemDir = gem environment gemdir
 
-bundle config set bin bin
-bundle config set path "$gemDir"
-bundle install
+Write-Output "bundle config set bin bin"
+bundle config set bin bin --verbose
+Write-Output "bundle config set path"
+bundle config set path "$gemDir" --verbose
+Write-Output "bundle install"
+bundle install --verbose
 
 # debug
 Write-Output "This is the contents of the gemfile:"
