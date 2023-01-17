@@ -26,8 +26,7 @@ ADD https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2
 RUN ruby-installer.exe /silent
 RUN ruby --version
 RUN gem install bundler -v '2.3'
-
-# RUN where ruby
+RUN where ruby
 
 # Install node/npm
 ADD https://nodejs.org/dist/v18.13.0/node-v18.13.0-x86.msi node.msi
