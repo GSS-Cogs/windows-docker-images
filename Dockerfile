@@ -26,13 +26,13 @@ ADD https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2
 RUN ruby-installer.exe /silent
 RUN ruby --version
 
-# Install npm
+# Install node/npm
 ADD https://nodejs.org/dist/v18.13.0/node-v18.13.0-x86.msi node.msi
 RUN msiexec /i node.msi
 RUN node --version
 
 # Install pyright
-RUN npm install -g pyright@$PYRIGHT_VERSION
+RUN npm install -g pyright@${PYRIGHT_VERSION}
 
 # Install csvlint, csv2rdf and the SPARQL tests.
 ADD https://raw.githubusercontent.com/GSS-Cogs/csvcubed/main/windows-testing-setup.ps1 windows-testing-setup.ps1
