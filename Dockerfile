@@ -19,7 +19,7 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2022
 # RUN pip install poetry
 
 # Install ruby
-ADD https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.3-1/rubyinstaller-2.4.3-1-x64.exe ruby-installer.exe
+RUN powershell -Command "Invoke-WebRequest -UseBasicParsing -Uri 'https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.3-1/rubyinstaller-2.4.3-1-x64.exe' -OutFile './ruby-installer.exe'"
 RUN powershell -Command " &'./rubyinstaller.exe' /silent"
 
 # todo: Install npm
