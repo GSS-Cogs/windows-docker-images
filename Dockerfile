@@ -25,8 +25,6 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2022
 ADD https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.3-1/rubyinstaller-2.4.3-1-x64.exe ruby-installer.exe
 RUN ruby-installer.exe /silent
 RUN ruby --version
-RUN gem install bundler -v '2.3'
-RUN powershell -Command "ls" 
 RUN where ruby
 
 # # Install node/npm

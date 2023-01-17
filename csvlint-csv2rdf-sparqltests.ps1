@@ -18,6 +18,8 @@ Expand-Archive -LiteralPath curl.zip -DestinationPath .
 cp curl-7.86.0-win64-mingw\bin\libcurl-x64.dll curl-7.86.0-win64-mingw\bin\libcurl.dll 
 cp curl-7.86.0-win64-mingw\bin\* C:\Ruby24-x64\bin\
 
+gem install bundler -v '2.3'
+
 bundle init
 bundle add i18n --version "~>1.12.0"
 bundle add csvlint --git https://github.com/GSS-Cogs/csvlint.rb --ref v0.6.7
