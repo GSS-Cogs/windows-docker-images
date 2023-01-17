@@ -7,7 +7,8 @@ RUN powershell -Command "Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.gi
 # Install python versions
 RUN pyenv install 3.11.1
 RUN pyenv install 3.10.9
-RUN pyenv install --list 
+RUN pyenv install 3.9.13
+# RUN pyenv install --list 
 # todo install a 3.9.x version!
 
 # Set global version of python.
@@ -17,4 +18,4 @@ RUN python --version
 
 # Install ruby
 ADD https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.3-1/rubyinstaller-2.4.3-1-x64.exe ruby-installer.exe
-RUN ./rubyinstaller.exe /silent
+RUN rubyinstaller.exe /silent
