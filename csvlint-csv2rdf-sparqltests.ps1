@@ -29,7 +29,9 @@ bundle config set path "$gemDir"
 bundle install
 
 # debug
+Write-Output "This is the contents of the gemfile:"
 Get-Content -Path Gemfile
+Write-Output "That was the contents of the gemfile."
 
 tree
 
