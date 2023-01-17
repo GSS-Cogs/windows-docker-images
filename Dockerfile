@@ -22,7 +22,8 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2022
 # RUN pip install poetry
 
 # Install git (necessary for csvlint)
-RUN winget install --id Git.Git -e --source winget
+ADD https://github.com/git-for-windows/git/releases/download/v2.39.0.windows.2/Git-2.39.0.2-64-bit.exe git-install.exe
+RUN git-install.exe /SILENT
 
 # Install ruby
 ADD https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.3-1/rubyinstaller-2.4.3-1-x64.exe ruby-installer.exe
