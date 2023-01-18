@@ -42,3 +42,5 @@ RUN npm install -g pyright@%PYRIGHT_VERSION%
 # Install csvlint, csv2rdf and the SPARQL tests.
 ADD csvlint-csv2rdf-sparqltests.ps1 csvlint-csv2rdf-sparqltests.ps1
 RUN powershell -Command "&'./csvlint-csv2rdf-sparqltests.ps1'"
+
+ENTRYPOINT ["python"]
