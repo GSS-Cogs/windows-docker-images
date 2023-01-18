@@ -2,6 +2,10 @@ FROM mcr.microsoft.com/windows/nanoserver:ltsc2022
 
 ARG PYRIGHT_VERSION=1.1.287
 
+# Install powershell, we really need it.
+ADD https://github.com/PowerShell/PowerShell/releases/download/v7.3.1/PowerShell-7.3.1-win-x64.msi powershell.msi
+RUN msiexec /i powershell.msi
+
 # Install pyenv
 # N.B. It alleges it fails, but don't necessarily believe it. 
 ADD https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1 install-pyenv-win.ps1
