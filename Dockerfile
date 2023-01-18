@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows/servercore:ltsc2022
+FROM mcr.microsoft.com/windows/nanoserver:ltsc2022
 
 ARG PYRIGHT_VERSION=1.1.287
 
@@ -43,4 +43,7 @@ RUN npm install -g pyright@%PYRIGHT_VERSION%
 ADD csvlint-csv2rdf-sparqltests.ps1 csvlint-csv2rdf-sparqltests.ps1
 RUN powershell -Command "&'./csvlint-csv2rdf-sparqltests.ps1'"
 
+
+# By default launching application that will run indefinitely
+# So we can run container as a daemon
 ENTRYPOINT ["python"]
