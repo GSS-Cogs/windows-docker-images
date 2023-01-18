@@ -5,7 +5,7 @@ ARG PYRIGHT_VERSION=1.1.287
 # Install pyenv
 # N.B. It alleges it fails, but don't necessarily believe it. 
 ADD https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1 install-pyenv-win.ps1
-RUN PowerShell\pwsh.exe -Command "&'./install-pyenv-win.ps1'"
+RUN pwsh.exe -Command "&'./install-pyenv-win.ps1'"
 
 # Install python versions
 RUN pyenv install 3.11.1
@@ -41,7 +41,7 @@ RUN npm install -g pyright@%PYRIGHT_VERSION%
 
 # Install csvlint, csv2rdf and the SPARQL tests.
 ADD csvlint-csv2rdf-sparqltests.ps1 csvlint-csv2rdf-sparqltests.ps1
-RUN PowerShell\pwsh.exe -Command "&'./csvlint-csv2rdf-sparqltests.ps1'"
+RUN pwsh.exe -Command "&'./csvlint-csv2rdf-sparqltests.ps1'"
 
 
 # By default launching application that will run indefinitely
