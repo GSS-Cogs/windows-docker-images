@@ -1,4 +1,4 @@
-FROM microsoft-powershell/lts-7.2-nanoserver-ltsc2022
+FROM mcr.microsoft.com/powershell:lts-7.2-nanoserver-ltsc2022
 
 ARG PYRIGHT_VERSION=1.1.287
 
