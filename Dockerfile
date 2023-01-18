@@ -4,6 +4,7 @@ ARG PYRIGHT_VERSION=1.1.287
 
 # Install powershell, we really need it.
 ADD https://github.com/PowerShell/PowerShell/releases/download/v7.3.1/PowerShell-7.3.1-win-x64.zip pwsh.zip
+RUN mkdir PowerShell
 RUN tar -xf pwsh.zip -C PowerShell
 
 
