@@ -7,8 +7,11 @@ ARG PYRIGHT_VERSION=1.1.287
 ADD https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1 install-pyenv-win.ps1
 RUN pwsh.exe -Command "&'./install-pyenv-win.ps1'"
 
+
+ARG pyenv = %USERPROFILE%\.pyenv\pyenv-win\bin\pyenv.exe
+
 # Install python versions
-RUN pwsh.exe -Command "pyenv install 3.11.1"
+RUN &"%pyenv%" install 3.11.1"
 RUN pyenv install 3.10.9
 RUN pyenv install 3.9.13
 # RUN pyenv install --list 
