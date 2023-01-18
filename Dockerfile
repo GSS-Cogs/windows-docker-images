@@ -4,7 +4,7 @@ ARG PYRIGHT_VERSION=1.1.287
 
 # Install powershell, we really need it.
 ADD https://github.com/PowerShell/PowerShell/releases/download/v7.3.1/PowerShell-7.3.1-win-x64.zip pwsh.zip
-RUN tar -xf archive.zip -C C:\Windows
+RUN tar -xf pwsh.zip -C C:\Windows
 
 # Install pyenv
 # N.B. It alleges it fails, but don't necessarily believe it. 
