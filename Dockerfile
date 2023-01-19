@@ -15,16 +15,6 @@ USER ContainerAdministrator
 
 RUN setx /M PATH "%PATH%;C:\Users\ContainerUser\.pyenv\pyenv-win\bin;C:\Users\ContainerUser\.pyenv\pyenv-win\shims'"
 
-RUN echo %PATH%
-
-USER ContainerUser
-
-RUN echo %PATH%
-
-# SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
-
-# RUN echo %PATH%
-
 # Install python versions
 RUN pyenv install 3.11.1
 RUN pyenv install 3.10.9
@@ -61,6 +51,7 @@ RUN npm install -g pyright@$PYRIGHT_VERSION
 ADD csvlint-csv2rdf-sparqltests.ps1 csvlint-csv2rdf-sparqltests.ps1
 RUN &'./csvlint-csv2rdf-sparqltests.ps1'
 
+USER ContainerUser
 
 # By default launching application that will run indefinitely
 # So we can run container as a daemon
