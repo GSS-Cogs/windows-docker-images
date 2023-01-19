@@ -9,8 +9,7 @@ SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference
 ADD https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1 install-pyenv-win.ps1
 RUN &'./install-pyenv-win.ps1'
 
-
-SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'; $env:PATH += ';C:\Users\ContainerUser\.pyenv\pyenv-win\bin;C:\Users\ContainerUser\.pyenv\pyenv-win\shims';"]
+RUN setx PATH "%PATH%;%USERPROFILE%\.pyenv\pyenv-win\bin;%USERPROFILE%\.pyenv\pyenv-win\shims'" /m
 
 # Install python versions
 RUN pyenv install 3.11.1
