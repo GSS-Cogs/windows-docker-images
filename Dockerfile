@@ -21,9 +21,9 @@ USER ContainerUser
 
 RUN echo %PATH%
 
-SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+# SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-RUN echo %PATH%
+# RUN echo %PATH%
 
 # Install python versions
 RUN pyenv install 3.11.1
