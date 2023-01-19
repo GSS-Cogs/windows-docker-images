@@ -15,13 +15,15 @@ USER ContainerAdministrator
 
 RUN setx /M PATH "%PATH%;C:\Users\ContainerUser\.pyenv\pyenv-win\bin;C:\Users\ContainerUser\.pyenv\pyenv-win\shims'"
 
+RUN echo %PATH%
+
 USER ContainerUser
 
-RUN pyenv --version
+RUN echo %PATH%
 
 SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-RUN pyenv --version
+RUN echo %PATH%
 
 # Install python versions
 RUN pyenv install 3.11.1
