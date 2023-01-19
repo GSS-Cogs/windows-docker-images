@@ -11,7 +11,11 @@ RUN &'./install-pyenv-win.ps1'
 
 SHELL ["cmd.exe", "/s", "/c"]
 
+USER ContainerAdministrator
+
 RUN setx /M PATH "%PATH%;C:\Users\ContainerUser\.pyenv\pyenv-win\bin;C:\Users\ContainerUser\.pyenv\pyenv-win\shims'"
+
+USER ContainerUser
 
 SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
