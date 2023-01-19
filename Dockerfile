@@ -2,10 +2,12 @@ FROM mcr.microsoft.com/powershell:lts-7.2-nanoserver-ltsc2022
 
 ARG PYRIGHT_VERSION=1.1.287
 
+SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
 # Install pyenv
 # N.B. It alleges it fails, but don't necessarily believe it. 
 ADD https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1 install-pyenv-win.ps1
-RUN pwsh.exe -Command "&'./install-pyenv-win.ps1'"
+RUN &'./install-pyenv-win.ps1'
 
 
 SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'; $env:PATH+=\";${env:USERPROFILE}\.pyenv\pyenv-win\bin;${env:USERPROFILE}\.pyenv\pyenv-win\shims\";"]
