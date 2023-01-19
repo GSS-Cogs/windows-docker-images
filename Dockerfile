@@ -10,7 +10,7 @@ ADD https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/insta
 RUN &'./install-pyenv-win.ps1'
 
 
-SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'; $env:PATH+=';C:\Users\ContainerUser\.pyenv\pyenv-win\bin;C:\Users\ContainerUser\.pyenv\pyenv-win\shims';"]
+SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'; $env:PATH += ';C:\Users\ContainerUser\.pyenv\pyenv-win\bin;C:\Users\ContainerUser\.pyenv\pyenv-win\shims';"]
 
 # Install python versions
 RUN pyenv install 3.11.1
