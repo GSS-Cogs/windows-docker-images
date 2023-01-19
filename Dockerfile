@@ -8,8 +8,10 @@ ADD https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/insta
 RUN pwsh.exe -Command "&'./install-pyenv-win.ps1'"
 
 
+SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'; $env:PATH+=\";${env:USERPROFILE}\.pyenv\pyenv-win\bin;${env:USERPROFILE}\.pyenv\pyenv-win\shims\";"]
+
 # Install python versions
-RUN pwsh.exe -Command '$env:PATH+=";${env:USERPROFILE}\.pyenv\pyenv-win\bin;${env:USERPROFILE}\.pyenv\pyenv-win\shims"; pyenv install 3.11.1'
+RUN pyenv install 3.11.1
 RUN pyenv install 3.10.9
 RUN pyenv install 3.9.13
 # RUN pyenv install --list 
