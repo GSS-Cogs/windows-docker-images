@@ -17,7 +17,11 @@ RUN setx /M PATH "%PATH%;C:\Users\ContainerUser\.pyenv\pyenv-win\bin;C:\Users\Co
 
 USER ContainerUser
 
+RUN pyenv --version
+
 SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+RUN pyenv --version
 
 # Install python versions
 RUN pyenv install 3.11.1
