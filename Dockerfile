@@ -4,6 +4,9 @@ ARG PYRIGHT_VERSION=1.1.287
 
 SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
+# Try setting execution policy to be permissive
+RUN Set-ExecutionPolicy -ExecutionPolicy Bypass
+
 # Install pyenv
 # N.B. It alleges it fails, but don't necessarily believe it. 
 ADD https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1 install-pyenv-win.ps1
