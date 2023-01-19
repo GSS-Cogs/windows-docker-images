@@ -10,7 +10,7 @@ ADD https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/insta
 RUN &'./install-pyenv-win.ps1'
 
 
-SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'; $env:PATH+=\";${env:USERPROFILE}\.pyenv\pyenv-win\bin;${env:USERPROFILE}\.pyenv\pyenv-win\shims\";"]
+#SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'; $env:PATH+=\";${env:USERPROFILE}\.pyenv\pyenv-win\bin;${env:USERPROFILE}\.pyenv\pyenv-win\shims\";"]
 
 # Install python versions
 RUN pyenv install 3.11.1
@@ -42,11 +42,11 @@ RUN msiexec /i node.msi
 RUN node --version
 
 # Install pyright
-RUN npm install -g pyright@%PYRIGHT_VERSION%
+RUN npm install -g pyright@$PYRIGHT_VERSION
 
 # Install csvlint, csv2rdf and the SPARQL tests.
 ADD csvlint-csv2rdf-sparqltests.ps1 csvlint-csv2rdf-sparqltests.ps1
-RUN pwsh.exe -Command "&'./csvlint-csv2rdf-sparqltests.ps1'"
+RUN &'./csvlint-csv2rdf-sparqltests.ps1'
 
 
 # By default launching application that will run indefinitely
