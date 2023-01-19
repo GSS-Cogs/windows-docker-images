@@ -5,7 +5,7 @@ ARG PYRIGHT_VERSION=1.1.287
 # Install pyenv
 # N.B. It alleges it fails, but don't necessarily believe it. 
 ADD https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1 install-pyenv-win.ps1
-RUN pwsh.exe -Command "&'./install-pyenv-win.ps1'; Out-File -FilePath path.log $env:PATH;"
+RUN pwsh.exe -Command "&'./install-pyenv-win.ps1'; echo $env:PATH | Out-File -FilePath path.log;"
 RUN echo "Printing path:"
 RUN pwsh.exe -Command "cat path.log"
 
